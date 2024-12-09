@@ -45,8 +45,14 @@ public class Variable {
 
         // Array
         int[] arr=new int[5];
+        float[] arr2=new float[7];
+        char[] chrrr=new char[3];
  
 
+        System.out.println(ch2);
+        System.out.println(num4);
+
+        System.out.println(arr); // array can't print value like this, this will return address of memory
 
 
     }
