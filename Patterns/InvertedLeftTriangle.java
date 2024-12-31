@@ -22,6 +22,7 @@ public class InvertedLeftTriangle {
            }
            System.out.println();
         }
+        
 
     }
 }
