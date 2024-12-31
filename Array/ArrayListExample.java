@@ -1,5 +1,8 @@
 package Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ArrayListExample {
@@ -32,13 +35,34 @@ public class ArrayListExample {
                 System.out.println("Element not founnd");
             }
     }
+    static void updateArrayList(ArrayList<Integer> arr,int index, Integer value){
+        if(index <0 || index > arr.size()){
+            System.out.println("Element does not exists");
+        }
+        arr.set(index, value);
+    }
+    static void SortArray(ArrayList<Integer> arr){
+       Collections.sort(arr,Collections.reverseOrder());// Reverse order
+       
+    }
+
+    static void foreachPrint(ArrayList<Integer> arr){
+        arr.forEach((n)-> {System.out.println(n);});
+    }
+
+    static void updateArrayList(ArrayList<Integer> arr, Integer value,Integer newvalue){
+        if(!arr.contains(value)){
+            System.out.println("Element does not exists");
+        }
+        arr.set(arr.indexOf(value), newvalue);
+    }
+
     //Driver
     public static void main(String[] args) {
        // int[] arr=new int[10];
-        ArrayList<Integer> newArray=new ArrayList<Integer>();
-        insertInArrayList(newArray);
-        printArrayList(newArray);
-        deleteArrayList(newArray, 3);
-        printArrayList(newArray);
+        // ArrayList<Integer> newArray=new ArrayList<Integer>(){
+        //     1,2,3,4,5
+        // };
+        
     }
 }
