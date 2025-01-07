@@ -10,7 +10,7 @@ public class Main {
     sl.print();
     sl.addAtFirst(6);
     sl.print();
-    sl.addAtPosition(7, 10);
+    sl.addAtPosition(7, 3);
     sl.print();
  }   
 }
