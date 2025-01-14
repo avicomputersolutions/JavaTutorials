@@ -45,6 +45,7 @@ public class Main {
         
                 System.out.println(csll.start.data);
                 System.out.println(csll.tail.data);
+                System.out.println(csll.isCircular());
             }
         
             

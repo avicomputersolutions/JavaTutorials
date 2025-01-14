@@ -4,6 +4,9 @@ public class CircularSingleLL {
         Node start;
         Node tail;
 
+        boolean isCircular(){
+               return tail.next == start;
+        }
         void insertAtlast(int data){
                 Node newNode = new Node(data);
                 if (start == null){
