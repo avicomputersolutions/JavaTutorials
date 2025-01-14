@@ -43,7 +43,8 @@ public class Main {
                 // n3.next =n5;
                 // n5.next = csll.start;
         
-                csll.printcsll();
+                System.out.println(csll.start.data);
+                System.out.println(csll.tail.data);
             }
         
             

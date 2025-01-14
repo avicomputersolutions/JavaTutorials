@@ -2,20 +2,26 @@ package LinkedList.CSLL;
 
 public class CircularSingleLL {
         Node start;
+        Node tail;
 
         void insertAtlast(int data){
                 Node newNode = new Node(data);
                 if (start == null){
                         start = newNode;
-                        newNode.next = start;
+                        tail = newNode;
+                        tail.next = start;
                 }
                 else{
-                        Node temp = start ;
-                        while(temp.next != start){
-                                temp = temp.next;
-                        }
-                        temp.next =newNode;
-                        newNode.next = start ;
+                        tail.next =newNode;
+                        tail =newNode;
+                        tail.next= start;
+                        // Node temp = start ;
+                        // while(temp.next != start){
+                        //         temp = temp.next;
+                        // }
+                        // temp.next =newNode;
+                        // tail
+                        // newNode.next = start ;
                 }
         }
         void insertAtFirst(int data){
@@ -26,13 +32,10 @@ public class CircularSingleLL {
                         start =newNode;
                         newNode.next = start;
                 }else{ 
-                        Node temp = start ;
-                        while(temp.next != start){
-                                temp = temp.next;
-                        }
-                        newNode.next = start;
-                        start = newNode;
-                        temp.next =start ;
+                       
+                      newNode.next = start;
+                      start =newNode;
+                      tail.next = start;
                 }
         }
 
