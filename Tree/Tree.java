@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Tree {
     Node Root;
 
@@ -5,18 +7,49 @@ public class Tree {
         Root =null;
     }
 
-    Node insert(Node Root,int data){
-        Node leafNode = new Node(data);
-        if (Root==null){
-            Root =leafNode;
+   void insert(Scanner sc){
+        System.out.println("Enter the root of  Tree");
+        Root = new Node(sc.nextInt());
+        insertchild(Root,sc);
+   }
+   void insertchild(Node n,Scanner sc){
+        System.out.println("Do you want to insert data at left of "+ n.data);
+        boolean left = sc.nextBoolean();
+        if(left){
+            System.out.println("Enter value of left of "+ n.data);
+            n.left = new Node(sc.nextInt());
+            insertchild(n.left, sc);
         }
-        else if ((Root.left == null && Root.right != null) || (Root.left == null && Root.right == null) ){
-            Root.left =insert(Root.left,data);
-        }else{
-            Root.left =insert(Root.left,data);
+        System.out.println("Do you want to insert data at right of "+ n.data);
+        boolean right = sc.nextBoolean();
+        if(right){
+            System.out.println("Enter value of right of "+ n.data);
+            n.right = new Node(sc.nextInt());
+            insertchild(n.right, sc);
         }
-        return leafNode;
+
+   }
+
+   int count(Node n){
+        if (n == null){
+            return 0;
+        }
+        int left = count(n.left);
+        int right = count(n.right);
+
+        return left + right + 1;
+
+   }
+   int sum(Node n){
+    if (n == null){
+        return 0;
     }
+    int left = sum(n.left);
+    int right = sum(n.right);
+
+    return left + right + Root.data;
+
+}
 
     void preOrder(Node Root){
         if(Root == null){

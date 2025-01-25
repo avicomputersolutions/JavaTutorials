@@ -1,13 +1,13 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Tree t = new Tree();
-
-    t.insert(t.Root,3);
-    t.insert(t.Root,2);
-    t.insert(t.Root,1);
-    t.insert(t.Root,4);
-    t.preOrder(t.Root);
-    System.out.println(t.Root);
+        Scanner sc = new Scanner(System.in);
+        t.insert(sc);
+        // t.preOrder(t.Root);
+        
+        System.out.println(t.count(t.Root));
 
       
 
