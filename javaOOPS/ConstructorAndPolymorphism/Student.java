@@ -6,6 +6,7 @@ public class Student {
     long Mno;
     int attendance;
     int marks;
+    Address address;
 
 
     // Contructor - Class Method - use to assign the value from main to class variable
@@ -22,7 +23,7 @@ public class Student {
     }
 
     // paramterized Contructor
-    Student(String n,int r,long m, int att, int mrk){
+    Student(String n,int r,long m, int att, int mrk, Address add){
         name = n;
         roll = r;
         Mno = m;

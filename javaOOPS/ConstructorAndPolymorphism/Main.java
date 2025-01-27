@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Student Submit(String name,int roll,long Mno, int attendance, int marks){
-       return new Student(name,roll,Mno,attendance,marks);
+    static Student Submit(String name,int roll,long Mno, int attendance, int marks,Address add1){
+       return new Student(name,roll,Mno,attendance,marks,add1);
        
     }
     public static void main(String[] args) {
@@ -13,6 +13,13 @@ public class Main {
 
         System.out.println("Enter Name");
         String name = sc.nextLine();
+        System.out.println("Enter city");
+        String city = sc.nextLine();
+
+        System.out.println("Enter county");
+        String country = sc.nextLine();
+
+        Address add1 = new Address(city,country);
 
         System.out.println("Enter Roll");
         int roll = sc.nextInt();
@@ -26,7 +33,7 @@ public class Main {
         System.out.println("Enter Marks");
         int marks = sc.nextInt();
 
-        Student s1 =Submit(name,roll,mno,att,marks);
+        Student s1 =Submit(name,roll,mno,att,marks,add1);
 
         System.out.println(s1.getAttendance());
 
