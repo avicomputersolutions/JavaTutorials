@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Tree {
@@ -28,6 +30,70 @@ public class Tree {
             insertchild(n.right, sc);
         }
 
+   }
+
+   void BFS(Node n){
+    if (n==null){
+        return;
+
+    }
+    Queue<Node> q= new LinkedList<>();
+    q.add(n);
+    q.add(null);
+
+    while(!q.isEmpty()){
+        Node cur= q.remove();
+        if (cur == null){
+            System.out.println();
+            if(q.isEmpty()){
+                break;
+            }else{
+                q.add(null);
+            }
+        }
+        else{
+            System.out.println(n.data);
+            if(n.left !=null){
+                q.add(n.left);
+            } 
+            if(n.right !=null){
+                q.add(n.right);
+            }
+        }
+    }
+   }
+
+   int heightOfTree(Node n){
+        if(n==null){
+            return -1;
+        }
+        int height =0;
+        Queue<Node> q= new LinkedList<>();
+    q.add(n);
+    q.add(null);
+
+    while(!q.isEmpty()){
+        Node cur= q.remove();
+        if (cur == null){
+
+            height +=1;
+            if(q.isEmpty()){
+                break;
+            }else{
+                q.add(null);
+            }
+        }
+        else{
+            
+            if(n.left !=null){
+                q.add(n.left);
+            } 
+            if(n.right !=null){
+                q.add(n.right);
+            }
+        }
+    }
+    return height;
    }
 
    int count(Node n){
